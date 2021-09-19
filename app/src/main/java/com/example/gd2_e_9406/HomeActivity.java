@@ -17,6 +17,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        setTitle("Data Mahasiswa");
 
         //  Fragment yang pertama kali terlihat adalah fragment mahasiswa
         changeFragment(new FragmentMahasiswa());
@@ -35,10 +36,10 @@ public class HomeActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == R.id.menu_mahasiswa){
             //  Jika menu yang dipilih adalah Mahasiswa maka ganti fragmentnya dengan FragmentMahasiswa
-            changeFragment(new FragmentMahasiswa());
+            changeFragment(new FragmentMahasiswa());setTitle("Data Mahasiswa");
         }else if(item.getItemId() == R.id.menu_dosen){
             //  Jika menu yang dipilih adalah Dosen maka ganti fragmentnya dengan FragmentDosen
-            changeFragment(new DosenFragment());
+            changeFragment(new DosenFragment());setTitle("Data Dosen");
         }else{
             //  Jika menu yang dipilih adalah menu Exit, maka tampilkan sebuah dialog
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
